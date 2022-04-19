@@ -1,0 +1,22 @@
+{
+  "name": "graphql-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "install:graphql": "cd graphql && npm i",
+    "install:rest": "cd rest && npm i",
+    "install:web": "cd web && npm i",
+    "postinstall": "run-p install:*",
+    "dev:rest": "cd rest && npm run dev",
+    "dev:graphql": "cd graphql && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "dev": "run-p dev:*"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
