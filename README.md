@@ -37,8 +37,8 @@ Try this query:
 
 ### Understand the existing Posts and Users data
 
-http://localhost:8101/posts?_limit=10
-http://localhost:8101/users
+- Posts - [http://localhost:8101/posts?_limit=10](http://localhost:8101/posts?_limit=10)
+- Users - [http://localhost:8101/users](http://localhost:8101/users)
 
 ## Tasks
 
