@@ -3,7 +3,8 @@ import gql from 'graphql-tag'
 const typeDefs = gql`
   type Query {
     hello(name: String): String!
-    posts(limit: Int, page: Int): [Post!]!
+    posts(limit: Int): [Post!]!
+    users(limit: Int): [User!]!
   }
 
   type Post {

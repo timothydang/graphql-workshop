@@ -16,4 +16,4 @@ const server = createServer({
 })
 
 // start the server and explore http://localhost:8100/graphql
-server.start()
+server.start(() => console.log('Server is running on http://localhost:8100/graphql'))
