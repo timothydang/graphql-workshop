@@ -21,7 +21,47 @@ let allUsers = null;
 const resolvers = {
   Query: {
     hello: (source, args, ctx) => `Hello ${args.name || 'World'}`,
+
+    posts: async (source, args, ctx) => {
+      if (!allPosts) {
+        allPosts = await fetchAllPosts();
+      }
+
+      return args.limit ? allPosts.slice(0, args.limit) : allPosts;
+    },
+
+    users: async (source, args, ctx) => {
+      if (!allUsers) {
+        allUsers = await fetchAllUsers();
+      }
+
+      return args.limit ? allUsers.slice(0, args.limit) : allUsers;
+    },
   },
+
+  Mutation: {
+    addNewUser: async (root, args, context, info) => {
+      if (!allUsers) {
+        allUsers = await fetchAllUsers();
+      }
+      const user = { id: `user${Date.now()}`, ...args.data };
+
+      allUsers.push(user);
+      return user;
+    }
+  },
+
+  Post: {
+    user: async (post, args, ctx) => {
+      const userId = post.user.id;
+
+      if (!allUsers) {
+        allUsers = await fetchAllUsers();
+      }
+
+      return allUsers.find((u) => u.id === userId);
+    }
+  }
 };
 
 export default resolvers;
