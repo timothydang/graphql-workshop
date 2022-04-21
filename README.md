@@ -42,7 +42,8 @@ Try this query:
 
 ## Tasks
 
-- Implement a Post resolver so we can query for our list of Posts
-- Implement a User resolver so we can query for all users.
-- Add `limit` and `page` for pagination to our Posts and Users query
-- Add Ability to add posts / comments with muutations
+1. Implement a Post resolver so we can query for our list of Posts.
+2. Implement a User resolver so we can query for all users.
+3. Implement User resolver inside Post to retrieve firstName and lastName.
+4. Add `limit` parameter to our Posts and Users query.
+5. Add Ability to add users, posts using mutations.
